@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Chai aur Tweet
+{% endblock %}
+
+{% block content %}
+    <h1 class="my-4 text-center">Welcome to Chai aur Tweet</h1>
+    <h2>{% if form.instance.pk %}
+        Edit Tweet
+    {% else %}
+        Create Tweet
+    {% endif %}
+    </h2>
+    <form method="post" enctype="multipart/form-data" class = "form mt-4">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-warning">
+            {% if form.instance.pk %}
+                Update Tweet
+            {% else %}
+                Create Tweet
+            {% endif %}
+        </button>
+        </form>
+        <a href="{% url 'tweet_list'%}">
+        <button class="btn btn-primary mt-3">Back to Tweet List</button>
+        </a>
+{% endblock %}
