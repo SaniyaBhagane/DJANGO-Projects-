@@ -1,0 +1,155 @@
+:root {
+  --white: #ffffff;
+  --glass-bg: rgba(255, 255, 255, 0.18);
+  --glass-border: rgba(255, 255, 255, 0.35);
+  --shadow: rgba(0, 0, 0, 0.25);
+  --primary: #4475ef;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* 🌄 Dynamic Background */
+body {
+  min-height: 100vh;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: background-image 0.6s ease-in-out;
+}
+
+/* Glass Container */
+.container {
+  width: 420px;
+  max-width: 95%;
+  padding: 2rem;
+
+  border-radius: 18px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 18px 40px var(--shadow);
+
+  color: #052933;
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+/* Search Form */
+form {
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  flex: 1;
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  background: transparent;
+  outline: none;
+  color: #052933;
+}
+
+input::placeholder {
+  color: rgba(5, 41, 51, 0.6);
+}
+
+/* Button */
+button {
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  border: none;
+
+  background: var(--primary);
+  color: white;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #62b8f5;
+  transform: translateY(-1px);
+}
+
+/* Weather Section */
+.weather {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+/* Cards */
+.left,
+.right {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.28);
+  padding: 1.2rem;
+  border-radius: 14px;
+  text-align: center;
+}
+
+/* Temperature */
+.left h2 {
+  font-size: 2.6rem;
+  font-weight: 600;
+}
+
+/* City */
+.left h3 {
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+/* Icon */
+.icon img {
+  width: 90px;
+  height: auto;
+}
+
+/* Condition */
+.condition {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 500px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .weather {
+    flex-direction: column;
+  }
+}
